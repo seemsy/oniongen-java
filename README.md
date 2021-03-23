@@ -5,7 +5,7 @@ Generate onion vanity addresses with Java + bouncycastle hehe
 
 todo:
 
-v3 (COMING SOON TO A hot-dog stand near you!)
+v3 ed25519 type0 key pair export
 
 interface
 
