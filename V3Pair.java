@@ -48,8 +48,7 @@ public class V3Pair {
        sumOut.writeBytes(pubByte);
        sumOut.write(0x03);
        
-       byte[] checksum = sha3_256(sumOut.toByteArray());
-       
+       byte[] checksum = sha3_256(sumOut.toByteArray()
        return Arrays.copyOfRange(checksum,0,2);
 
     }
@@ -61,13 +60,12 @@ public class V3Pair {
         calcOut.writeBytes(ed25519OnionChecksum());
         calcOut.write(0x03);
         byte[] bArray = calcOut.toByteArray();
-      
-       Base32 b32 = new Base32();
-       byte[] b32encoded = b32.encode(bArray);
-       
-
-     String onion = new String(b32encoded, StandardCharsets.UTF_8);
-     return onion.toLowerCase() + ".onion";
+        
+        Base32 b32 = new Base32();
+        byte[] b32encoded = b32.encode(bArray);
+        
+        String onion = new String(b32encoded, StandardCharsets.UTF_8);
+        return onion.toLowerCase() + ".onion";
 
     }
     
