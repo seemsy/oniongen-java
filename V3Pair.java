@@ -18,10 +18,10 @@ import org.apache.commons.codec.binary.*;
 
 public class V3Pair {
     
-    Ed25519KeyPairGenerator kpg;
-    AsymmetricCipherKeyPair kp;
-    Ed25519PublicKeyParameters publicKey;
-    Ed25519PrivateKeyParameters privateKey;
+   private Ed25519KeyPairGenerator kpg;
+   private AsymmetricCipherKeyPair kp;
+   private Ed25519PublicKeyParameters publicKey;
+   private Ed25519PrivateKeyParameters privateKey;
 
     public V3Pair() throws IOException { 
         this.kpg = new Ed25519KeyPairGenerator();
@@ -32,14 +32,14 @@ public class V3Pair {
 
     }
 
-    static byte[] sha512(byte[] input) throws NoSuchAlgorithmException {
+    private static byte[] sha512(byte[] input) throws NoSuchAlgorithmException {
         MessageDigest mDigest = MessageDigest.getInstance("SHA-512");
         byte[] result = mDigest.digest(input);
         return result;
     } 
     
     
-    static byte[] sha3_256(byte[] input) throws NoSuchAlgorithmException {
+    private static byte[] sha3_256(byte[] input) throws NoSuchAlgorithmException {
         MessageDigest mDigest = MessageDigest.getInstance("SHA3-256");
         byte[] result = mDigest.digest(input);
         return result;
@@ -68,7 +68,7 @@ public class V3Pair {
         return hash;
     }
     
-    public String privateKeyExport() throws FileNotFoundException, IOException, NoSuchAlgorithmException {
+    public void privateKeyExport() throws FileNotFoundException, IOException, NoSuchAlgorithmException {
         ByteArrayOutputStream privOut = new ByteArrayOutputStream();
         privOut.writeBytes("== ed25519v1-secret: type0 ==".getBytes());
         privOut.write(0x00);
@@ -81,12 +81,9 @@ public class V3Pair {
         FileOutputStream f = new FileOutputStream("hs_ed25519_secret_key");
         f.write(privateKeyContents);
         f.close();
-
-        
-        return null;
     }
     
-     public String publicKeyExport() throws FileNotFoundException, IOException {
+     public void publicKeyExport() throws FileNotFoundException, IOException {
         ByteArrayOutputStream pubOut = new ByteArrayOutputStream();
         pubOut.writeBytes("== ed25519v1-public: type0 ==".getBytes());
         pubOut.write(0x00);
@@ -99,9 +96,6 @@ public class V3Pair {
         FileOutputStream f = new FileOutputStream("hs_ed25519_public_key");
         f.write(publicKeyContents);
         f.close();
-
-        
-        return null;
     }
     
     public String calculateOnionv3() throws IOException, NoSuchAlgorithmException{
@@ -111,12 +105,11 @@ public class V3Pair {
         calcOut.writeBytes(ed25519OnionChecksum());
         calcOut.write(0x03);
         byte[] bArray = calcOut.toByteArray();
-      
-       Base32 b32 = new Base32();
-       byte[] b32encoded = b32.encode(bArray);
-       
-       String onion = new String(b32encoded, StandardCharsets.UTF_8);
-       return onion.toLowerCase() + ".onion";
+        Base32 b32 = new Base32();
+        byte[] b32encoded = b32.encode(bArray);
+        
+        String onion = new String(b32encoded, StandardCharsets.UTF_8);
+        return onion.toLowerCase() + ".onion";
     }
     
    
