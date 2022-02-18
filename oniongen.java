@@ -78,9 +78,8 @@ public class oniongen {
         do {
             V3Pair v3 = new V3Pair();
             System.out.println(v3.calculateOnionv3());
-            if(v3.calculateOnionv3().contains(keyword))
+            if(found = v3.calculateOnionv3().contains(keyword))
             {
-                found = true;
                 System.out.println(v3.calculateOnionv3());
                 v3.privateKeyExport();
                 v3.publicKeyExport();
