@@ -1,14 +1,13 @@
 # oniongen-java
-Generate onion vanity addresses with Java.
+Generate custom .v3 .onion addresses using Java.
+I felt inspired to write this after seeing custom TOR .onion generators written in many other popular languages. 
+For majority of this I referenced oniongen-go and translated it into Java.
 
-# Usage
-java -jar oniongen.jar **(keyword) (position) (version)**
+# Build from source
 
-**Keyword:** alphanumeric string
+**Usage**
+java -jar oniongen.jar <regex> 
+  
+**Examples**
 
-**Position:** start, end, any
-
-**Version:** 2, 3
-
-**Example:**
-java -jar oniongen.jar doge any 3
+**References/Libraries**
