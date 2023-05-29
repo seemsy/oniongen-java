@@ -3,6 +3,7 @@ Generate custom .v3 .onion addresses using Java.
 
 ## About
 Generates vanity v3 .onion addresses until an address matches a regex specified by the user. 
+Matching addresses have their corresponding keys and hostname exported to the same folder the application is executed in. 
 
 # Build from source
 ## Run latest release
