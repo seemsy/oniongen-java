@@ -15,8 +15,6 @@ Generates vanity v3 .onion addresses until an address matches a regex specified 
 
 ```
 java -jar oniongen.jar <regex> 
-
-**Examples**
 ```
 
 ## Examples
