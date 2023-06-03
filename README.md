@@ -1,11 +1,10 @@
 # oniongen-java
-Generate custom .v3 .onion addresses using Java.
+Generate custom v3 .onion addresses using Java.
 
 ## About
-Generates vanity v3 .onion addresses until an address matches a regex specified by the user. 
+Generates v3 .onion addresses until an address matches a regex specified by the user. 
 Matching addresses have their corresponding keys and hostname exported to the same folder the application is executed in. 
 
-# Build from source
 ## Run latest release
 - [Download and unzip latest release of oniongen-java](https://github.com/seemsy/oniongen-java/releases)
 - [Download and install latest version of Java for your OS](https://www.java.com/en/download/manual.jsp)
