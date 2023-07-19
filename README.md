@@ -6,7 +6,7 @@ Matching addresses have their corresponding keys and hostname exported to the sa
 
 ## Run latest release
 - [Download and unzip latest release of oniongen-java](https://github.com/seemsy/oniongen-java/releases)
-- [Download and install latest version of Java for your OS](https://www.java.com/en/download/manual.jsp)
+- [Download and install latest version of Java for your OS](https://www.oracle.com/java/technologies/downloads/)
 - [Run oniongen.jar from unzipped contents.](#usage)
 
 
