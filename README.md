@@ -1,6 +1,5 @@
 # oniongen-java
-Generate custom v3 .onion addresses using Java.
-
+![](https://seemz.me/blog/wp-content/uploads/2023/07/genoniongen.gif)
 ## About
 Generates v3 .onion addresses until an address matches a regex specified by the user. 
 Matching addresses have their corresponding keys and hostname exported to the same folder the application is executed in. 
